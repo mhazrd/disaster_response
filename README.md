@@ -2,7 +2,7 @@
 
 ### About
 
-It's important to know any disaster using people's message data. The ML model will be created and trained on the collected message data and used to predict a disaster category based on a message using NLP techniques
+It's important to know any information about disaster quickly using people's message data. Usually after the disaster occurs, relevant text/message data will be generated on web/sns. If these relevant texts can be detected and forwarded to a disaster professionals out of a big amount of unrelevant text data on web, it will help the professionals to respond more quickly and properly. The ML model will be created and trained on the collected message data and used to predict a disaster category based on a message using NLP techniques
 
 ### HowTo Instructions:
 

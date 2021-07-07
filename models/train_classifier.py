@@ -35,8 +35,6 @@ def load_data(database_filepath):
     Y = df.iloc[:, 4:]
     category_names = Y.columns
 
-    Y.loc[Y.related == 2, 'related'] = 1
-
     return X, Y, category_names
 
 
@@ -50,11 +48,10 @@ def tokenize(text):
     '''
     stop_words = stopwords.words('english')
     lemmatizer = WordNetLemmatizer()
-    stemmer = PorterStemmer()
 
     text = text.lower()
     words = [w.strip() for w in word_tokenize(text)]
-    normalised_words = [stemmer.stem(lemmatizer.lemmatize(w)) for w in words if w not in stop_words]
+    normalised_words = [lemmatizer.lemmatize(w) for w in words if w not in stop_words]
     
     return normalised_words
 

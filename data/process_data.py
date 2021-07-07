@@ -45,6 +45,10 @@ def clean_data(df):
 
     # Drop duplicates
     df = df.drop_duplicates()
+
+    # Binarize
+    df.loc[df.related == 2, 'related'] = 1
+
     return df
 
 
@@ -57,7 +61,7 @@ def save_data(df, database_filename):
     '''
     engine = create_engine('sqlite:///' + database_filename)
     table_name = database_filename.split('.')[0]
-    df.to_sql(table_name, engine, index=False)
+    df.to_sql(table_name, engine, index=False, if_exists='replace')
 
 
 def main():
